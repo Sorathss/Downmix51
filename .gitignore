@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# build/ is committed on purpose (ready-to-run download), except the test app
+build/Downmix51Test.app/
+*.dSYM/
+
+# editors
+*.swp
+.vscode/
+.idea/

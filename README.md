@@ -9,6 +9,27 @@ any app ──5.1──▶ "Downmix51" device (virtual, 6ch) ──▶ Downmix51
                                                        × volume slider
 ```
 
+## Download
+
+A ready-to-run build is committed in this repo, in **[`build/Downmix51.app`](https://github.com/Sorathss/Downmix51/tree/main/build/Downmix51.app)**. It needs an Apple Silicon Mac with macOS 13 or later. The audio driver is inside the app, which installs it on first launch.
+
+GitHub can't download a single folder, so get the app in one of these two ways:
+
+- **ZIP:** download **[Downmix51-main.zip](https://github.com/Sorathss/Downmix51/archive/refs/heads/main.zip)**, unzip it, and move `Downmix51-main/build/Downmix51.app` to **Applications**.
+- **git:**
+
+  ```bash
+  git clone https://github.com/Sorathss/Downmix51.git && cp -R Downmix51/build/Downmix51.app /Applications/
+  ```
+
+The build is ad-hoc signed and not notarized. macOS blocks a copy downloaded as a ZIP the first time you open it. A copy made with `git clone` isn't blocked. To allow a ZIP copy, open it once, then go to **System Settings → Privacy & Security** and click **Open Anyway**. You can also run:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/Downmix51.app
+```
+
+On an Intel Mac, build from source with `APP_ARCH=x86_64 ./build.sh` (see below).
+
 ## How the app behaves
 
 | When | What happens |
@@ -55,6 +76,8 @@ After that, click the speaker icon in the menu bar:
 - Other controls: on/off switch, "Make Downmix51 the system output while running", Launch at login, and **More → Reinstall / Remove Driver**.
 
 When you rebuild, the app sees that its embedded driver is newer than the installed one and offers to update it.
+
+`build/` is committed on purpose, because it's the [download](#download). After changing the source, run `./build.sh` and commit `build/` along with your changes, so the download always matches the code.
 
 ## How the routing works
 
