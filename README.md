@@ -9,6 +9,10 @@ any app ──5.1──▶ "Downmix51" device (virtual, 6ch) ──▶ Downmix51
                                                        × volume slider
 ```
 
+<p align="center">
+  <img src="docs/screenshot.png" width="343" alt="Downmix51 menu-bar window: on/off switch, stereo output device picker, output volume slider with 0 / −6 / −12 dB presets, L/R level meters and CLIP indicator">
+</p>
+
 ## Download
 
 A ready-to-run build is committed in this repo, in **[`build/Downmix51.app`](https://github.com/Sorathss/Downmix51/tree/main/build/Downmix51.app)**. It needs an Apple Silicon Mac with macOS 13 or later. The audio driver is inside the app, which installs it on first launch.
